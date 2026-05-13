@@ -1,0 +1,91 @@
+<data inherit_id="website.layout">
+    <xpath expr="//div[@id='wrapwrap']" position="before">
+        <style>
+            /* ── FOOTER CONTAINER ── */
+            footer {
+                background: #0d382b !important;
+                border-top: 1px solid #c28b45 !important;
+            }
+
+            footer #footer {
+                padding: 4rem 0 3rem !important;
+            }
+
+            /* ── LINKS ── */
+            footer a,
+            footer .nav-link {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.72rem !important;
+                font-weight: 600 !important;
+                letter-spacing: 0.15em !important;
+                text-transform: uppercase !important;
+                color: rgba(255,255,255,0.75) !important;
+                text-decoration: none !important;
+                transition: color 0.2s ease !important;
+            }
+
+            footer a:hover,
+            footer .nav-link:hover {
+                color: #c28b45 !important;
+                text-decoration: none !important;
+            }
+
+            /* ── HEADINGS ── */
+            footer h4, footer h5, footer h6 {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                color: #ffffff !important;
+                font-weight: 400 !important;
+                font-size: 1.1rem !important;
+                margin-bottom: 1.25rem !important;
+            }
+
+            /* ── BODY TEXT ── */
+            footer p,
+            footer address,
+            footer li {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.8rem !important;
+                color: rgba(255,255,255,0.65) !important;
+                line-height: 1.8 !important;
+                font-style: normal !important;
+                list-style: none !important;
+            }
+
+            /* ── BARRA LEGAL (copyright) ── */
+            footer .o_footer_copyright {
+                border-top: 1px solid rgba(194,139,69,0.4) !important;
+                padding: 1.25rem 0 !important;
+                background: #0a2e22 !important;
+            }
+
+            footer .o_footer_copyright,
+            footer .o_footer_copyright a,
+            footer .o_footer_copyright span {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.68rem !important;
+                font-weight: 500 !important;
+                letter-spacing: 0.12em !important;
+                color: rgba(255,255,255,0.45) !important;
+                text-transform: uppercase !important;
+            }
+
+            footer .o_footer_copyright a:hover {
+                color: #c28b45 !important;
+            }
+
+            /* ── SOCIAL ICONS ── */
+            footer .s_social_media a,
+            footer .o_share_btn {
+                color: rgba(255,255,255,0.65) !important;
+                border-color: rgba(255,255,255,0.2) !important;
+                transition: color 0.2s ease, border-color 0.2s ease !important;
+            }
+
+            footer .s_social_media a:hover,
+            footer .o_share_btn:hover {
+                color: #c28b45 !important;
+                border-color: #c28b45 !important;
+            }
+        </style>
+    </xpath>
+</data>

@@ -1,0 +1,17 @@
+<data inherit_id="website_sale.products_item">
+
+    <xpath expr="//span[contains(@class, 'oe_product_image')]" position="replace">
+        <span class="oe_product_image qh-product-image-box">
+            <img t-att-src="'/web/image/product.template/%s/image_1920' % product.id" t-att-alt="product.name" class="qh-product-img" style="width:auto !important; height:auto !important; max-width:26% !important; max-height:460px !important; object-fit:contain !important; object-position:center center !important; display:block !important; margin:0 auto !important;"/>
+        </span>
+    </xpath>
+
+    <xpath expr="//*[contains(@class, 'o_wsale_products_item_title')]" position="before">
+        <t t-if="product.public_categ_ids">
+            <div class="qh-card-category">
+                <t t-esc="product.public_categ_ids[0].name"/>
+            </div>
+        </t>
+    </xpath>
+
+</data>

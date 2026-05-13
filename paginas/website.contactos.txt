@@ -1,0 +1,402 @@
+<t t-call="website.layout">
+  <t t-set="pageName" t-value="'contactos'"/>
+
+  <div id="wrap" class="oe_structure">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap');
+
+#wrap{
+  font-family:'Inter',sans-serif;
+  background:#f4f0e8;
+  color:#12372d;
+}
+
+.ch-container{
+  width:min(1280px,92%);
+  margin:auto;
+}
+
+.ch-title{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  line-height:1.08;
+  color:#12372d;
+}
+
+.ch-kicker{
+  color:#c28b45;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  font-weight:700;
+}
+
+.ch-text{
+  font-size:1.15rem;
+  line-height:1.85;
+  color:#4f5b66;
+}
+
+.ch-line{
+  width:80px;
+  height:1px;
+  background:#c28b45;
+  margin:2rem 0;
+}
+
+.ch-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.1rem 2.4rem;
+  background:#c28b45;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  transition:.25s;
+}
+
+.ch-btn:hover{
+  background:#a87535;
+  color:#fff;
+  text-decoration:none;
+}
+
+/* HERO */
+.ch-contact-hero{
+  min-height:78vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#0d382b;
+}
+
+.ch-contact-hero-copy{
+  padding:8rem 6vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:#fff;
+}
+
+.ch-contact-hero-copy .ch-title,
+.ch-contact-hero-copy .ch-kicker,
+.ch-contact-hero-copy .ch-text{
+  color:#fff;
+}
+
+.ch-contact-hero h1{
+  font-size:clamp(4rem,7vw,7.8rem);
+  margin:1.5rem 0;
+}
+
+.ch-contact-hero-img{
+  min-height:78vh;
+}
+
+.ch-contact-hero-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* CONTACT CARDS */
+.ch-contact-cards{
+  padding:7rem 0;
+  background:#f4f0e8;
+}
+
+.ch-card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+
+.ch-contact-card{
+  background:#fff;
+  padding:3rem;
+  min-height:260px;
+}
+
+.ch-contact-card h3{
+  color:#12372d;
+  font-size:1.35rem;
+  margin-bottom:1rem;
+  font-weight:700;
+}
+
+.ch-contact-card p,
+.ch-contact-card a{
+  color:#4f5b66;
+  line-height:1.8;
+  text-decoration:none;
+}
+
+/* VISIT */
+.ch-visit{
+  background:#0d382b;
+  color:#fff;
+  padding:8rem 0;
+}
+
+.ch-visit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5rem;
+  align-items:center;
+}
+
+.ch-visit .ch-title,
+.ch-visit .ch-text,
+.ch-visit .ch-kicker{
+  color:#fff;
+}
+
+.ch-visit h2{
+  font-size:clamp(3rem,5vw,5.8rem);
+}
+
+.ch-hours{
+  display:grid;
+  gap:1.2rem;
+  margin-top:3rem;
+}
+
+.ch-hour-item{
+  border-top:1px solid rgba(255,255,255,.18);
+  padding-top:1.2rem;
+}
+
+.ch-hour-item strong{
+  color:#c28b45;
+}
+
+.ch-hour-item a{
+  color:#fff;
+  text-decoration:none;
+}
+
+.ch-visit-img img{
+  width:100%;
+  height:620px;
+  object-fit:cover;
+  display:block;
+}
+
+/* CTA */
+.ch-final-contact{
+  padding:8rem 0;
+  text-align:center;
+  background:#f4f0e8;
+}
+
+.ch-final-contact h2{
+  font-size:clamp(3rem,5vw,5.8rem);
+  max-width:900px;
+  margin:1.5rem auto;
+}
+
+.ch-final-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1rem;
+  margin-top:3rem;
+}
+
+/* MAP FINAL */
+.ch-map-final{
+  background:#0d382b;
+  padding:0;
+}
+
+.ch-map-header{
+  padding:7rem 0 4rem;
+  text-align:center;
+  color:#fff;
+}
+
+.ch-map-header .ch-title,
+.ch-map-header .ch-kicker,
+.ch-map-header .ch-text{
+  color:#fff;
+}
+
+.ch-map-header h2{
+  font-size:clamp(3rem,5vw,5.8rem);
+  margin:1.5rem auto;
+}
+
+.ch-map-large{
+  width:100%;
+  height:720px;
+  overflow:hidden;
+}
+
+.ch-map-large iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+  filter:saturate(.85) contrast(.95);
+}
+
+@media(max-width:991px){
+  .ch-contact-hero,
+  .ch-card-grid,
+  .ch-visit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ch-contact-hero-copy{
+    padding:4rem 2rem;
+  }
+
+  .ch-contact-hero-img,
+  .ch-visit-img img{
+    min-height:420px;
+    height:420px;
+  }
+
+  .ch-map-large{
+    height:520px;
+  }
+}
+</style>
+
+<section class="ch-contact-hero o_colored_level">
+  <div class="ch-contact-hero-copy">
+    <div class="ch-kicker">Contactos</div>
+    <h1 class="ch-title">Fale connosco.</h1>
+    <p class="ch-text">
+      Estamos no coração de Baião, entre vinhas, paisagem e tradição.
+      Para visitas, provas, reservas ou questões comerciais, a Casa das Hortas está à sua espera.
+    </p>
+    <div class="ch-line"/>
+    <a href="/contactos#Formul%C3%A1rio" class="ch-btn">Contactar</a>
+  </div>
+
+  <div class="ch-contact-hero-img">
+    <img src="/web/image/1268-2c311b47/d.o.c.jpg" alt="Casa das Hortas contactos" data-attachment-id="1265" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="1212" data-original-id="1265" data-original-src="/web/image/1265-5b7757db/d.o.c.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+  </div>
+</section>
+
+<section class="ch-contact-cards o_colored_level">
+  <div class="ch-container">
+    <div class="ch-card-grid">
+
+      <div class="ch-contact-card">
+        <h3>Morada</h3>
+        <p>Rua Principal de Valadares, 146<br/>4640-594 Baião, Portugal</p>
+      </div>
+
+      <div class="ch-contact-card">
+        <h3>Reservas e enoturismo</h3>
+        <p>
+          <a href="mailto:enoturismo@casadashortas.pt">enoturismo@casadashortas.pt</a><br/>
+          <a href="tel:+351254881487">+351 254 881 487</a>
+        </p>
+        <p>Chamada para a rede fixa nacional</p>
+      </div>
+
+      <div class="ch-contact-card">
+        <h3>Geral e comercial</h3>
+        <p>
+          <a href="mailto:info@casadashortas.pt">info@casadashortas.pt</a><br/>
+          <a href="mailto:comercial@casadashortas.pt">comercial@casadashortas.pt</a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="ch-visit o_colored_level">
+  <div class="ch-container">
+    <div class="ch-visit-grid">
+
+      <div>
+        <div class="ch-kicker">Visite-nos</div>
+        <h2 class="ch-title">O Douro espera por si.</h2>
+        <div class="ch-line"/>
+        <p class="ch-text">
+          Para visitas, provas e experiências de enoturismo,
+          recomendamos reserva antecipada.
+        </p>
+
+        <div class="ch-hours">
+          <div class="ch-hour-item">
+            <strong>Época baixa</strong>
+            <p>Novembro a abril · Atividades nas salas de prova das 10h às 15h</p>
+          </div>
+
+          <div class="ch-hour-item">
+            <strong>Época alta</strong>
+            <p>Maio a outubro · Atividades nas salas de prova e exterior das 10h às 16h</p>
+          </div>
+
+          <div class="ch-hour-item">
+            <strong>Reservas</strong>
+            <p><a href="mailto:enoturismo@casadashortas.pt">enoturismo@casadashortas.pt</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-visit-img">
+        <img src="/web/image/1266-c3dae9bf/cabec%CC%A7a%20de%20gaio%20branco%20.jpg" alt="Visitar Casa das Hortas" data-attachment-id="1192" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="900" data-original-id="1192" data-original-src="/web/image/1192-b9c564e7/cabec%CC%A7a%20de%20gaio%20branco%20.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="ch-final-contact o_colored_level pb40">
+  <div class="ch-container">
+    <div class="ch-kicker">Casa das Hortas</div>
+    <h2 class="ch-title">Quer marcar uma prova ou visitar a quinta?</h2>
+    <p class="ch-text">
+      Entre em contacto connosco e ajudamos a preparar a sua experiência.
+    </p>
+
+
+  </div>
+</section><section class="s_website_form o_colored_level pt0 pb64" data-vcss="001" data-snippet="s_website_form" data-name="Formulário" id="Formul%C3%A1rio" data-anchor="true">
+        <div class="o_container_small">
+            <form action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="" data-pre-fill="true" data-model_name="crm.lead" data-success-mode="redirect" data-success-page="/contactus-thank-you">
+                <div class="s_website_form_rows row s_col_no_bgcolor">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_required" data-type="char" data-translated-name="Nome"><label class="s_website_form_label" style="width: 200px" for="ow25j5yexvhf"><span class="s_website_form_label_content">Nome</span><span class="s_website_form_mark">  </span></label><input class="form-control s_website_form_input" type="text" name="contact_name" required="" value="" placeholder="" id="ow25j5yexvhf" data-fill-with="name"/></div><div data-name="Field" class="s_website_form_field mb-3 col-12" data-type="tel" data-translated-name="Telefone"><label class="s_website_form_label" style="width: 200px" for="obkq175v1bqn"><span class="s_website_form_label_content">Telefone</span></label><input class="form-control s_website_form_input" type="tel" name="phone" value="" placeholder="" id="obkq175v1bqn" data-fill-with="phone"/></div><div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_required" data-type="email" data-translated-name="Email"><label class="s_website_form_label" style="width: 200px" for="otz27rpkis68"><span class="s_website_form_label_content">Email</span><span class="s_website_form_mark">  </span></label><input class="form-control s_website_form_input" type="email" name="email_from" required="" value="" placeholder="" id="otz27rpkis68" data-fill-with="email"/></div><div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_model_required" data-type="char" data-translated-name="Assunto"><label class="s_website_form_label" style="width: 200px" for="o7z8e6d3iple"><span class="s_website_form_label_content">Assunto</span><span class="s_website_form_mark">  </span></label><input class="form-control s_website_form_input" type="text" name="name" required="" value="" placeholder="" id="o7z8e6d3iple" data-fill-with="undefined"/></div><div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_required" data-type="text" data-translated-name="Mensagem"><label class="s_website_form_label" style="width: 200px" for="opwg3wn2pjk"><span class="s_website_form_label_content">Mensagem</span><span class="s_website_form_mark">  </span></label><textarea class="form-control s_website_form_input" name="description" required="" placeholder="" id="opwg3wn2pjk" rows="3"/></div><div class="mb-0 py-2 col-12 s_website_form_submit text-start s_website_form_no_submit_label" data-name="Submit Button">
+                        <div style="width: 200px;" class="s_website_form_label"/>
+                        <span id="s_website_form_result"/>
+                        <a href="#" role="button" class="s_website_form_send o_translate_inline btn btn-lg flat btn-custom" style="color: rgb(255, 255, 255); background-color: rgb(55, 82, 75); border: 0px solid rgb(255, 255, 255);">Enviar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+<section class="ch-map-final o_colored_level">
+  <div class="ch-map-header">
+    <div class="ch-container">
+      <div class="ch-kicker">Localização</div>
+      <h2 class="ch-title">Encontre-nos em Baião.</h2>
+      <p class="ch-text">
+        Rua Principal de Valadares, 146 · 4640-594 Baião, Portugal
+      </p>
+    </div>
+  </div>
+
+  <div class="ch-map-large">
+    <iframe src="https://www.google.com/maps?q=Rua%20Principal%20de%20Valadares%20146%204640-594%20Bai%C3%A3o%20Portugal&amp;output=embed" loading="lazy"/>
+  </div>
+</section>
+
+  </div>
+</t>

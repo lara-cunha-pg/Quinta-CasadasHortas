@@ -1,0 +1,505 @@
+<data inherit_id="website_sale.products">
+
+    <xpath expr="//div[@id='wrap']" position="before">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap');
+
+            :root {
+                --ch-green: #0f3b2d;
+                --ch-green-dark: #0d382b;
+                --ch-bg: #f4f0e8;
+                --ch-cream: #e8e0d2;
+                --ch-gold: #c28b45;
+                --ch-text: #4f5b66;
+                --ch-white: #ffffff;
+            }
+
+            #wrap.o_wsale_products_page {
+                background: var(--ch-bg);
+                font-family: 'Inter', sans-serif;
+                color: var(--ch-green);
+            }
+
+            .qh-shop-hero {
+                position: relative;
+                min-height: 58vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                overflow: hidden;
+                background: var(--ch-green-dark);
+                background-image: url("/web/image/1234-42ac55f6/hero.webp");
+                background-size: cover;
+                background-position: center;
+                margin-bottom: 0;
+            }
+
+            .qh-shop-hero:before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba(0,0,0,.42);
+                z-index: 1;
+            }
+
+            .qh-shop-hero-content {
+                position: relative;
+                z-index: 2;
+                width: min(1000px, 90%);
+                color: #fff;
+                padding: 6rem 0;
+            }
+
+            .qh-shop-kicker {
+                color: var(--ch-gold);
+                letter-spacing: .42em;
+                text-transform: uppercase;
+                font-size: .78rem;
+                font-weight: 700;
+                margin-bottom: 1.4rem;
+            }
+
+            .qh-shop-hero .qh-shop-kicker {
+                color: #fff;
+            }
+
+            .qh-shop-title {
+                font-family: 'Playfair Display', serif;
+                font-weight: 400;
+                line-height: 1.08;
+                color: #fff;
+                font-size: clamp(3.2rem, 6vw, 6.8rem);
+                margin: 0;
+            }
+
+            .qh-shop-hero-text {
+                max-width: 760px;
+                margin: 2rem auto 0;
+                font-size: 1.25rem;
+                line-height: 1.8;
+                color: #fff;
+            }
+
+            .qh-shop-line {
+                width: 80px;
+                height: 1px;
+                background: var(--ch-gold);
+                margin: 2rem auto 0;
+            }
+
+            .qh-shop-page {
+                max-width: 1440px;
+                margin: 0 auto;
+                padding: 7rem 42px 120px;
+            }
+
+            .qh-shop-page .o_wsale_shop_title {
+                display: none;
+            }
+
+            .qh-shop-intro {
+                max-width: 780px;
+                margin-bottom: 4rem;
+            }
+
+            .qh-shop-intro .qh-shop-kicker {
+                color: var(--ch-gold);
+            }
+
+            .qh-shop-intro h2 {
+                font-family: 'Playfair Display', serif;
+                color: var(--ch-green);
+                font-size: clamp(3rem, 5vw, 5.8rem);
+                font-weight: 400;
+                line-height: 1.15;
+                margin: 0;
+            }
+
+            .qh-shop-intro p {
+                font-size: 1.12rem;
+                line-height: 1.85;
+                color: var(--ch-text);
+                margin-top: 2rem;
+            }
+
+            .qh-shop-intro .qh-shop-line {
+                margin-left: 0;
+            }
+
+            .qh-shop-sidebar {
+                background: #e8e0d2 !important;
+                padding: 38px 28px !important;
+                max-width: 270px;
+                border: 0 !important;
+                color: var(--ch-green) !important;
+            }
+
+            .qh-shop-sidebar,
+            .qh-shop-sidebar a,
+            .qh-shop-sidebar span,
+            .qh-shop-sidebar label {
+                color: var(--ch-green) !important;
+                font-family: 'Inter', sans-serif;
+            }
+
+            .qh-shop-sidebar h6,
+            .qh-shop-sidebar .accordion-button {
+                color: var(--ch-green) !important;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: .22em;
+                font-size: 11px;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+
+            .qh-shop-sidebar a {
+                text-decoration: none !important;
+                line-height: 1.8;
+            }
+
+            .qh-shop-sidebar a:hover {
+                color: var(--ch-gold) !important;
+            }
+
+            .qh-shop-page #products_grid {
+                padding-left: 64px;
+            }
+
+            .qh-shop-page .o_wsale_apply_layout,
+            .qh-shop-page .o_wsale_products_searchbar_form,
+            .qh-shop-page .dropdown_sorty_by {
+                font-family: 'Inter', sans-serif;
+            }
+
+            .qh-shop-page .btn,
+            .qh-shop-page .form-control,
+            .qh-shop-page .dropdown-toggle {
+                border-radius: 0 !important;
+            }
+
+            .qh-shop-page .form-control {
+                border: 0 !important;
+                background: #fff !important;
+                min-height: 46px;
+                color: var(--ch-green) !important;
+            }
+
+            .qh-shop-page .o_wsale_products_categories_tabs .nav-link,
+            .qh-shop-page .nav-pills .nav-link {
+                border-radius: 999px !important;
+                background: #fff !important;
+                color: var(--ch-green) !important;
+                padding: .9rem 1.5rem !important;
+                border: 1px solid rgba(0,0,0,.05) !important;
+                font-weight: 500;
+            }
+
+            .qh-shop-page .o_wsale_products_categories_tabs .nav-link.active,
+            .qh-shop-page .nav-pills .nav-link.active,
+            .qh-shop-page .nav-pills .show &gt; .nav-link {
+                background: var(--ch-green) !important;
+                color: #fff !important;
+            }
+
+            .qh-shop-page .o_wsale_products_grid_table {
+                gap: 56px 38px !important;
+            }
+
+            .qh-shop-page .oe_product,
+            .qh-shop-page .oe_product_cart,
+            .qh-shop-page .o_wsale_product_grid_wrapper {
+                background: transparent !important;
+                overflow: visible !important;
+                box-shadow: none !important;
+                border: 0 !important;
+            }
+
+            .qh-shop-page .oe_product_cart {
+                transition: filter .25s ease;
+            }
+
+            .qh-shop-page .oe_product_cart:hover {
+                transform: none;
+                filter: drop-shadow(0 18px 45px rgba(0,0,0,.08));
+            }
+
+            .qh-shop-page .oe_product_image,
+            .qh-shop-page .o_wsale_product_image,
+            .qh-shop-page .oe_product_image_link,
+            .qh-shop-page .ratio,
+            .qh-shop-page .ratio-1x1 {
+                overflow: visible !important;
+                aspect-ratio: auto !important;
+                background-size: contain !important;
+                background-repeat: no-repeat !important;
+                background-position: center center !important;
+            }
+
+            .qh-shop-page .oe_product_image,
+            .qh-shop-page .o_wsale_product_image,
+            .qh-shop-page .oe_product_image_link {
+                height: 480px !important;
+                min-height: 480px !important;
+                background: #e8e0d2 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 54px 32px !important;
+                box-shadow: none !important;
+                transition: box-shadow .25s ease;
+                overflow: hidden !important;
+                position: relative !important;
+            }
+
+            .qh-shop-page .oe_product_cart:hover .oe_product_image,
+            .qh-shop-page .oe_product_cart:hover .oe_product_image_link {
+                box-shadow: 0 18px 45px rgba(0,0,0,.08) !important;
+            }
+
+            .qh-shop-page .oe_product_cart:hover .oe_product img,
+            .qh-shop-page .oe_product_cart:hover .oe_product_image img,
+            .qh-shop-page .oe_product_cart:hover .o_wsale_product_image img,
+            .qh-shop-page .oe_product_cart:hover .oe_product_image_link img {
+                transform: translateY(-10px) !important;
+            }
+
+            .qh-shop-page .oe_product img,
+            .qh-shop-page .oe_product_image img,
+            .qh-shop-page .o_wsale_product_image img,
+            .qh-shop-page .oe_product_image_link img {
+                position: static !important;
+                inset: auto !important;
+                width: auto !important;
+                height: auto !important;
+                max-width: 40% !important;
+                max-height: 400px !important;
+                object-fit: contain !important;
+                object-position: center center !important;
+                transform: translateY(0) !important;
+                transition: transform .4s ease !important;
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            /* INFO PRODUTO */
+
+            .o_wsale_product_information {
+                margin-left: 10px !important;
+            }
+            .qh-shop-page .o_wsale_product_information {
+                background: #fff !important;
+                padding: 26px 28px 32px 40px !important;
+                border: 0 !important;
+                border-top: 1px solid rgba(0,0,0,.06) !important;
+                box-shadow: none !important;
+            }
+
+            .qh-shop-page .o_wsale_products_item_title {
+                'Playfair Display', serif !important;
+            }
+
+            .qh-shop-page .o_wsale_products_item_title,
+            .qh-shop-page .oe_product h6 {
+                margin-bottom: .7rem !important;
+            }
+
+            #products_grid .o_wsale_products_item_title,
+            #products_grid .o_wsale_products_item_title * {
+                font-family: 'Playfair Display', Georgia, serif !important;
+                color: #0f3b2d !important;
+                font-size: 1.45rem;
+                line-height: 1.22;
+                font-weight: 400;
+                text-decoration: none !important;
+            }
+
+            .qh-shop-page .o_wsale_products_item_title a:hover,
+            .qh-shop-page .oe_product h6 a:hover {
+                color: var(--ch-gold) !important;
+            }
+
+            #products_grid .o_wsale_products_item_title a::after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 1px;
+                background: #c28b45;
+                margin-top: .65rem;
+            }
+
+            .qh-shop-page .qh-card-category {
+                font-family: 'Inter', sans-serif;
+                font-size: .65rem;
+                letter-spacing: .3em;
+                text-transform: uppercase;
+                color: var(--ch-gold);
+                font-weight: 700;
+                margin-bottom: .55rem;
+            }
+
+            #products_grid .product_price,
+            #products_grid .product_price *,
+            #products_grid .oe_currency_value {
+                font-family: 'Inter', sans-serif !important;
+                color: #0f3b2d !important;
+                font-weight: 700;
+                font-size: 1.15rem;
+                letter-spacing: .02em;
+            }
+
+            .qh-shop-page .o_wsale_product_btn,
+            .qh-shop-page .a-submit,
+            .qh-shop-page form .btn-primary {
+                background: var(--ch-gold) !important;
+                border-color: var(--ch-gold) !important;
+                color: #fff !important;
+                border-radius: 0 !important;
+                font-family: 'Inter', sans-serif !important;
+                font-size: .78rem !important;
+                font-weight: 700 !important;
+                letter-spacing: .12em !important;
+                text-transform: uppercase !important;
+                padding: .85rem 1.4rem !important;
+                transition: background .25s ease !important;
+            }
+
+            .qh-shop-page .o_wsale_product_btn:hover,
+            .qh-shop-page .a-submit:hover,
+            .qh-shop-page form .btn-primary:hover {
+                background: #a87535 !important;
+                border-color: #a87535 !important;
+            }
+
+            .qh-shop-page .o_add_wishlist,
+            .qh-shop-page .o_wsale_product_btn .btn {
+                border-radius: 0 !important;
+            }
+
+            .qh-shop-page .o_add_cart_btn {
+                position: absolute !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                width: 100% !important;
+                height: auto !important;
+                border-radius: 0 !important;
+                background: var(--ch-gold) !important;
+                border: 0 !important;
+                color: #fff !important;
+                font-family: 'Inter', sans-serif !important;
+                font-size: .72rem !important;
+                font-weight: 700 !important;
+                letter-spacing: .14em !important;
+                text-transform: uppercase !important;
+                padding: 1rem !important;
+                transform: translateY(100%) !important;
+                transition: transform .28s ease !important;
+                z-index: 2 !important;
+            }
+
+            .qh-shop-page .oe_product_cart:hover .o_add_cart_btn {
+                transform: translateY(0) !important;
+            }
+
+            .qh-shop-page .o_add_cart_btn:hover {
+                background: #a87535 !important;
+            }
+
+            @media (max-width: 991px) {
+                .qh-shop-hero {
+                    min-height: 52vh;
+                }
+
+                .qh-shop-page {
+                    padding: 5rem 22px 80px;
+                }
+
+                .qh-shop-page #products_grid {
+                    padding-left: 0;
+                }
+
+                .qh-shop-sidebar {
+                    display: none !important;
+                }
+
+                .qh-shop-page .oe_product_image,
+                .qh-shop-page .o_wsale_product_image,
+                .qh-shop-page .oe_product_image_link {
+                    height: 380px !important;
+                    min-height: 380px !important;
+                }
+
+                .qh-shop-page .oe_product img,
+                .qh-shop-page .oe_product_image img,
+                .qh-shop-page .o_wsale_product_image img,
+                .qh-shop-page .oe_product_image_link img {
+                    max-width: 50% !important;
+                    max-height: 310px !important;
+                }
+
+                .qh-shop-page .o_wsale_product_information {
+                    padding: 22px 22px 28px !important;
+                }
+            }
+
+            @media (max-width: 575px) {
+                .qh-shop-hero-content {
+                    padding: 5rem 0;
+                }
+
+                .qh-shop-title {
+                    font-size: 3rem;
+                }
+
+                .qh-shop-hero-text {
+                    font-size: 1rem;
+                }
+
+                .qh-shop-intro h2 {
+                    font-size: 3rem;
+                }
+            }
+        </style>
+    </xpath>
+
+    <xpath expr="//div[@id='wrap']" position="inside">
+        <section class="qh-shop-hero">
+            <div class="qh-shop-hero-content">
+                <div class="qh-shop-kicker">Quinta &amp; Casa das Hortas</div>
+                <h1 class="qh-shop-title">
+                    Os nossos<br/>
+                    vinhos.
+                </h1>
+                <div class="qh-shop-line"/>
+                <p class="qh-shop-hero-text">
+                    Vinhos produzidos com autenticidade, tradição e carácter,
+                    nascidos entre vinhas, tempo e Douro.
+                </p>
+            </div>
+        </section>
+    </xpath>
+
+    <xpath expr="//div[@id='o_wsale_container']" position="attributes">
+        <attribute name="class" add="qh-shop-page" separator=" "/>
+    </xpath>
+
+    <xpath expr="//aside[@id='products_grid_before']" position="attributes">
+        <attribute name="class" add="qh-shop-sidebar" separator=" "/>
+    </xpath>
+
+    <xpath expr="//h1[contains(@class, 'o_wsale_shop_title')]" position="replace">
+        <div class="qh-shop-intro">
+            <div class="qh-shop-kicker">Vinhos Casa das Hortas</div>
+            <h2>Descubra a nossa seleção.</h2>
+            <div class="qh-shop-line"/>
+            <p>
+                Uma coleção de vinhos pensada para diferentes momentos:
+                dos Vinhos Verdes frescos e expressivos aos Douro mais intensos,
+                sempre com a identidade da Casa das Hortas.
+            </p>
+        </div>
+    </xpath>
+
+</data>

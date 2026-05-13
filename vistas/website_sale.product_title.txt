@@ -1,0 +1,27 @@
+<t t-name="website_sale.product_title">
+        <div t-attf-class="o_wsale_product_details_content_section o_wsale_product_details_content_section_title {{'mb-3' if not product.description_ecommerce else ''}}">
+            <!-- FIXME VCR variable seems unused -->
+            <t t-set="base_url" t-value="website.get_base_url()"/>
+            <h1 t-attf-class="h3 {{'mb-3' if not product.description_ecommerce and not is_view_active('website_sale.product_comment') else ''}}" t-field="product.name">
+                Product Name
+            </h1>
+            <t t-if="is_view_active('website_sale.product_comment')">
+                <a href="#o_product_page_reviews" class="o_product_page_reviews_link d-block mb-2 text-decoration-none">
+                    <t t-set="trans_text_plural">%s reviews</t>
+                    <t t-set="trans_text_singular">%s review</t>
+                    <t t-call="portal_rating.rating_widget_stars_static" rating_avg="product.sudo().rating_avg" trans_text_plural="trans_text_plural" trans_text_singular="trans_text_singular" rating_count="(trans_text_plural if product.rating_count &gt; 1 else trans_text_singular) % product.rating_count">
+                        <!-- sudo: product.product - visitor can access product average rating -->
+                    </t>
+                </a>
+            </t>
+            <div t-field="product.description_ecommerce" t-attf-class="oe_structure mb-3 text-muted" placeholder="A detailed, formatted description to promote your product on this page. Use '/' to discover more features."/>
+            <t t-if="is_view_active('website_sale.product_tags')" t-call="website_sale.product_tags" all_product_tags="product_variant.all_product_tag_ids">
+            </t>
+            <p t-if="(not is_add_to_cart_possible) and (not product.active)" class="alert alert-warning">
+                This product is no longer available.
+            </p>
+            <p t-elif="not is_add_to_cart_possible" class="alert alert-warning">
+                This product has no valid combination.
+            </p>
+        </div>
+    </t>

@@ -1,0 +1,112 @@
+<data><xpath expr="//*[hasclass('oe_structure')][@id='oe_structure_website_sale_recommended_products']" position="replace"><div class="oe_structure oe_structure_solo oe_unremovable oe_unmovable" id="oe_structure_website_sale_recommended_products">
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap');
+
+                    .o_wsale_alternative_products .oe_product,
+                    .o_wsale_alternative_products .oe_product_cart,
+                    .o_wsale_alternative_products .o_wsale_product_grid_wrapper {
+                        background: transparent !important;
+                        overflow: visible !important;
+                        box-shadow: none !important;
+                        border: 0 !important;
+                        transition: filter .25s ease;
+                    }
+
+                    .o_wsale_alternative_products .oe_product_cart:hover {
+                        filter: drop-shadow(0 18px 45px rgba(0,0,0,.08));
+                    }
+
+                    .o_wsale_alternative_products .oe_product_image,
+                    .o_wsale_alternative_products .o_wsale_product_image,
+                    .o_wsale_alternative_products .oe_product_image_link {
+                        background: #e8e0d2 !important;
+                        height: 380px !important;
+                        min-height: 380px !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        padding: 40px 24px !important;
+                        overflow: hidden !important;
+                        position: relative !important;
+                        box-shadow: none !important;
+                        transition: box-shadow .25s ease;
+                    }
+
+                    .o_wsale_alternative_products .oe_product_cart:hover .oe_product_image,
+                    .o_wsale_alternative_products .oe_product_cart:hover .oe_product_image_link {
+                        box-shadow: 0 18px 45px rgba(0,0,0,.08) !important;
+                    }
+
+                    .o_wsale_alternative_products .oe_product_image img,
+                    .o_wsale_alternative_products .oe_product_image_link img,
+                    .o_wsale_alternative_products .o_wsale_product_image img {
+                        max-width: 40% !important;
+                        max-height: 310px !important;
+                        width: auto !important;
+                        height: auto !important;
+                        object-fit: contain !important;
+                        display: block !important;
+                        margin: 0 auto !important;
+                        transform: translateY(0);
+                        transition: transform .4s ease;
+                    }
+
+                    .o_wsale_alternative_products .oe_product_cart:hover .oe_product_image img,
+                    .o_wsale_alternative_products .oe_product_cart:hover .oe_product_image_link img {
+                        transform: translateY(-8px) !important;
+                    }
+
+                    .o_wsale_alternative_products .o_wsale_product_information {
+                        background: #ffffff !important;
+                        padding: 22px 22px 26px 32px !important;
+                        border: 0 !important;
+                        border-top: 1px solid rgba(0,0,0,.06) !important;
+                        box-shadow: none !important;
+                    }
+
+                    .o_wsale_alternative_products .o_wsale_products_item_title,
+                    .o_wsale_alternative_products .o_wsale_products_item_title * {
+                        font-family: 'Playfair Display', Georgia, serif !important;
+                        color: #0f3b2d !important;
+                        font-size: 1.25rem !important;
+                        font-weight: 400 !important;
+                        line-height: 1.25 !important;
+                        text-decoration: none !important;
+                    }
+
+                    .o_wsale_alternative_products .o_wsale_products_item_title a::after {
+                        content: '';
+                        display: block;
+                        width: 80px;
+                        height: 1px;
+                        background: #c28b45;
+                        margin-top: .65rem;
+                    }
+
+                    .o_wsale_alternative_products .product_price,
+                    .o_wsale_alternative_products .product_price *,
+                    .o_wsale_alternative_products .oe_currency_value {
+                        font-family: 'Inter', sans-serif !important;
+                        color: #0f3b2d !important;
+                        font-weight: 700 !important;
+                        font-size: 1rem !important;
+                        letter-spacing: .02em !important;
+                    }
+                </style>
+                <section data-snippet="s_dynamic_snippet_products" class="oe_unmovable oe_unremovable s_dynamic_snippet_products o_wsale_alternative_products s_dynamic o_colored_level s_product_product_borderless_1" data-name="Alternative Products" data-template-key="website_sale.dynamic_filter_template_product_product_products_item" data-product-category-id="all" data-number-of-elements="4" data-number-of-elements-small-devices="1" data-number-of-records="16" data-carousel-interval="5000" data-bs-original-title="" title="" data-filter-id="6" style="background:#f4f0e8; padding:5rem 0;">
+                    <div class="container" style="max-width:min(1320px,92%); margin-left:0; padding-left:2rem;">
+                        <div class="row s_nb_column_fixed">
+                            <section class="s_dynamic_snippet_title oe_unremovable oe_unmovable d-flex flex-column flex-md-row justify-content-between mb-lg-0 pb-3 pb-md-0 o_colored_level">
+                                <div>
+                                    <p style="font-family:'Inter',sans-serif; font-size:.78rem; letter-spacing:.42em; text-transform:uppercase; color:#c28b45; font-weight:700; margin-bottom:1rem;">Também pode gostar</p>
+                                    <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(2.4rem,4vw,4rem); color:#0f3b2d; font-weight:400; line-height:1.12; margin-bottom:0;">Produtos Alternativos</h2>
+                                    <div style="width:80px; height:1px; background:#c28b45; margin:2rem 0 3rem;"></div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="o_not_editable">
+                            <div class="dynamic_snippet_template"/>
+                        </div>
+                    </div>
+                </section>
+            </div></xpath></data>

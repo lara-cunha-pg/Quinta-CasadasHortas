@@ -1,0 +1,131 @@
+<data inherit_id="website.layout">
+    <xpath expr="//div[@id='wrapwrap']" position="before">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap');
+
+            /* ── NAVBAR CONTAINER ── */
+            header#top,
+            header#top .navbar {
+                background: #0d382b !important;
+                border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+                box-shadow: none !important;
+            }
+
+            header#top .navbar {
+                min-height: 72px !important;
+                padding: 0 2rem !important;
+            }
+
+            /* ── LOGO ── */
+            header#top .navbar-brand img,
+            header#top .o_logo img {
+                height: 52px !important;
+                width: auto !important;
+                max-width: none !important;
+            }
+
+            /* ── NAV LINKS ── */
+            header#top #top_menu .nav-link,
+            header#top .nav-item .nav-link,
+            header#top a.nav-link {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.72rem !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.2em !important;
+                text-transform: uppercase !important;
+                color: rgba(255,255,255,0.82) !important;
+                padding: 0.5rem 1rem !important;
+                text-decoration: none !important;
+                transition: color 0.2s ease !important;
+            }
+
+            header#top #top_menu .nav-link:hover,
+            header#top .nav-item .nav-link:hover,
+            header#top a.nav-link:hover {
+                color: #c28b45 !important;
+            }
+
+            header#top #top_menu .nav-item.active > .nav-link,
+            header#top .nav-item.active > .nav-link {
+                color: #c28b45 !important;
+            }
+
+            /* ── CARRINHO ── */
+            header#top .o_wsale_header_basket,
+            header#top .o_wsale_header_basket a {
+                color: rgba(255,255,255,0.82) !important;
+                transition: color 0.2s ease !important;
+            }
+
+            header#top .o_wsale_header_basket:hover,
+            header#top .o_wsale_header_basket a:hover {
+                color: #c28b45 !important;
+            }
+
+            header#top .o_wsale_header_basket .badge,
+            header#top .o_wsale_header_basket .o_count {
+                background: #c28b45 !important;
+                color: #fff !important;
+                border-radius: 0 !important;
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.6rem !important;
+                font-weight: 700 !important;
+            }
+
+            /* ── SELETOR DE LÍNGUA ── */
+            header#top .o_lang_selector_nav .nav-link,
+            header#top .o_lang_switcher_nav .dropdown-toggle,
+            header#top [id*="lang"] .nav-link {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.72rem !important;
+                font-weight: 700 !important;
+                letter-spacing: 0.15em !important;
+                text-transform: uppercase !important;
+                color: rgba(255,255,255,0.82) !important;
+            }
+
+            header#top .o_lang_selector_nav .nav-link:hover,
+            header#top .o_lang_switcher_nav .dropdown-toggle:hover {
+                color: #c28b45 !important;
+            }
+
+            /* ── DROPDOWN MENUS ── */
+            header#top .dropdown-menu {
+                background: #0d382b !important;
+                border: 1px solid rgba(255,255,255,0.1) !important;
+                border-radius: 0 !important;
+                box-shadow: 0 8px 32px rgba(0,0,0,0.2) !important;
+                padding: 0.5rem 0 !important;
+            }
+
+            header#top .dropdown-menu .dropdown-item {
+                font-family: 'Inter', sans-serif !important;
+                font-size: 0.72rem !important;
+                font-weight: 600 !important;
+                letter-spacing: 0.15em !important;
+                text-transform: uppercase !important;
+                color: rgba(255,255,255,0.82) !important;
+                padding: 0.6rem 1.4rem !important;
+                transition: color 0.2s ease, background 0.2s ease !important;
+            }
+
+            header#top .dropdown-menu .dropdown-item:hover {
+                background: rgba(255,255,255,0.06) !important;
+                color: #c28b45 !important;
+            }
+
+            /* ── MOBILE ── */
+            @media (max-width: 991px) {
+                header#top .navbar {
+                    padding: 0 1rem !important;
+                    min-height: 60px !important;
+                }
+
+                header#top .navbar-brand img,
+                header#top .o_logo img {
+                    height: 40px !important;
+                }
+            }
+        </style>
+    </xpath>
+</data>

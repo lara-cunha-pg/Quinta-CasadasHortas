@@ -1,0 +1,781 @@
+<t t-call="website.layout">
+  <t t-set="pageName" t-value="'experiencias'"/>
+
+  <div id="wrap" class="oe_structure">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap');
+
+#wrap{
+  font-family:'Inter',sans-serif;
+  background:#f4f0e8;
+  color:#17382f;
+}
+
+.ch-container{
+  width:min(1320px,92%);
+  margin:auto;
+}
+
+.ch-title{
+  font-family:'Playfair Display',serif;
+  font-weight:400;
+  line-height:1.15;
+  color:#0f3b2d;
+}
+
+.ch-kicker{
+  color:#c28b45;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  font-size:.78rem;
+  font-weight:700;
+}
+
+.ch-line{
+  width:80px;
+  height:1px;
+  background:#c28b45;
+  margin:2rem 0;
+}
+
+.ch-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.8rem;
+  padding:1.1rem 2.5rem;
+  background:#c28b45;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  transition:.25s;
+}
+
+.ch-btn:hover{
+  background:#a87535;
+  color:#fff;
+  text-decoration:none;
+}
+
+.ch-btn-light{
+  background:#fff;
+  color:#12372d;
+}
+
+.ch-btn-outline{
+  background:transparent;
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.ch-text{
+  font-size:1.18rem;
+  line-height:1.85;
+  color:#4f5b66;
+}
+
+/* HERO SEM BACKGROUND DO ODOO */
+.ch-exp-hero{
+  position:relative;
+  min-height:65vh;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#12372d;
+  background-size:cover !important;
+  background-position:center center !important;
+}
+
+
+.ch-exp-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.38);
+  z-index:2;
+}
+
+.ch-exp-hero-content{
+  position:relative;
+  z-index:3;
+  width:min(1050px,90%);
+  color:#fff;
+}
+
+.ch-exp-hero .ch-kicker,
+.ch-exp-hero .ch-title{
+  color:#fff;
+}
+
+.ch-exp-hero h1{
+  font-size:clamp(2.2rem,4vw,4.5rem);
+  margin:1.5rem 0 2rem;
+}
+
+.ch-exp-hero p{
+  max-width:850px;
+  margin:auto;
+  font-size:1.35rem;
+  line-height:1.75;
+  color:#fff;
+}
+
+.ch-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:1.4rem;
+  margin-top:3rem;
+}
+
+/* INTRO */
+.ch-intro{
+  padding:8rem 0;
+  background:#f4f0e8;
+}
+
+.ch-intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:6rem;
+  align-items:center;
+}
+
+.ch-intro h2{
+  font-size:clamp(3rem,5vw,5.8rem);
+}
+
+.ch-intro-img img{
+  width:100%;
+  height:680px;
+  object-fit:cover;
+  display:block;
+}
+
+/* EXPERIENCIAS PRINCIPAIS */
+.ch-exp-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:720px;
+}
+
+.ch-exp-row:nth-child(even) .ch-exp-img{
+  order:2;
+}
+
+.ch-exp-row:nth-child(even) .ch-exp-copy{
+  order:1;
+}
+
+.ch-exp-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.ch-exp-copy{
+  background:#fff;
+  padding:6rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.ch-exp-copy.dark{
+  background:#0d382b;
+  color:#fff;
+}
+
+.ch-exp-copy.dark .ch-title,
+.ch-exp-copy.dark .ch-text,
+.ch-exp-copy.dark li,
+.ch-exp-copy.dark .ch-duration{
+  color:#fff;
+}
+
+.ch-exp-copy h2{
+  font-size:clamp(3rem,5vw,5.2rem);
+}
+
+.ch-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.8rem;
+  margin:2rem 0;
+}
+
+.ch-pill{
+  border:1px solid rgba(0,0,0,.12);
+  padding:.65rem 1rem;
+  color:#4f5b66;
+  font-size:.92rem;
+}
+
+.dark .ch-pill{
+  border-color:rgba(255,255,255,.2);
+  color:#fff;
+}
+
+.ch-exp-copy ul{
+  margin:1.5rem 0;
+  padding-left:1.2rem;
+}
+
+.ch-exp-copy li{
+  margin-bottom:.8rem;
+  color:#4f5b66;
+  line-height:1.6;
+}
+
+.ch-duration{
+  font-weight:700;
+  color:#12372d;
+  margin-top:1rem;
+}
+
+/* PACKAGES */
+.ch-packages{
+  padding:8rem 0;
+  background:#f4f0e8;
+}
+
+.ch-packages h2{
+  font-size:clamp(3rem,5vw,5.8rem);
+}
+
+.ch-package-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2rem;
+  margin-top:4rem;
+}
+
+.ch-package{
+  background:#fff;
+  padding:3rem;
+}
+
+.ch-package h3{
+  color:#12372d;
+  font-size:1.7rem;
+  font-weight:800;
+  margin-bottom:1.5rem;
+}
+
+.ch-package li{
+  margin-bottom:.7rem;
+  color:#333;
+  line-height:1.55;
+}
+
+/* SPECIAL */
+.ch-special{
+  background:#fff;
+  padding:7rem 0;
+}
+
+.ch-special-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:3rem;
+}
+
+.ch-special h3{
+  color:#12372d;
+  font-size:1.45rem;
+  margin-bottom:1rem;
+}
+
+/* CINEMATIC */
+.ch-cinematic{
+  height:80vh;
+  position:relative;
+  overflow:hidden;
+}
+
+
+.ch-cinematic-text{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:flex-end;
+  padding:7rem;
+  background:rgba(0,0,0,.28);
+}
+
+.ch-cinematic h2{
+  color:#fff;
+  font-size:clamp(3rem,6vw,7rem);
+}
+
+/* GALERIA */
+.ch-gallery{
+  padding:8rem 0;
+  background:#f4f0e8;
+}
+
+.ch-gallery h2{
+  font-size:clamp(3rem,5vw,5.5rem);
+}
+
+.ch-gallery-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr .8fr;
+  gap:1.5rem;
+  margin-top:4rem;
+}
+
+.ch-gallery-main{
+  height:850px;
+}
+
+.ch-gallery-col{
+  display:grid;
+  gap:1.5rem;
+}
+
+.ch-gallery-small{
+  height:412px;
+}
+
+.ch-gallery img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* FAQ */
+.ch-faq{
+  background:#fff;
+  padding:8rem 0;
+}
+
+.ch-faq h2{
+  text-align:center;
+  font-size:clamp(3rem,5vw,5.5rem);
+}
+
+.ch-faq-list{
+  max-width:950px;
+  margin:4rem auto 0;
+}
+
+.ch-faq-item{
+  border-bottom:1px solid rgba(0,0,0,.1);
+  padding:2rem 0;
+}
+
+.ch-faq-item h3{
+  color:#12372d;
+  font-size:1.3rem;
+}
+
+/* CTA */
+.ch-final{
+  position:relative;
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  background:#12372d;
+}
+
+.ch-final img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  z-index:1;
+}
+
+.ch-final:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:2;
+}
+
+.ch-final-content{
+  position:relative;
+  z-index:3;
+  width:min(900px,90%);
+  color:#fff;
+}
+
+.ch-final .ch-title,
+.ch-final .ch-kicker{
+  color:#fff;
+}
+
+.ch-final h2{
+  font-size:clamp(3rem,6vw,6rem);
+}
+
+@media(max-width:991px){
+  .ch-intro-grid,
+  .ch-exp-row,
+  .ch-package-grid,
+  .ch-special-grid,
+  .ch-gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .ch-exp-row:nth-child(even) .ch-exp-img,
+  .ch-exp-row:nth-child(even) .ch-exp-copy{
+    order:unset;
+  }
+
+  .ch-exp-copy{
+    padding:4rem 2rem;
+  }
+
+  .ch-intro-img img,
+  .ch-gallery-main,
+  .ch-gallery-small{
+    height:420px;
+  }
+
+  .ch-cinematic-text{
+    padding:3rem 2rem;
+  }
+}
+</style>
+
+<section class="ch-exp-hero o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box pt72 pb96" style="background-image: url(&quot;/web/image/1234-42ac55f6/hero.webp&quot;);" data-attachment-id="1233" data-format-mimetype="image/webp" data-resize-width="1920" data-original-id="1233" data-original-src="/web/image/1233-42ac55f6/hero.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp">
+  <div class="ch-exp-hero-overlay"/>
+
+  <div class="ch-exp-hero-content">
+    <div class="ch-kicker">Experiências no Douro</div>
+
+    <h1 class="ch-title">
+      Mais do que uma visita.<br/>
+            Uma experiência entre vinhas e vinho.
+    </h1>
+
+    <p>
+      Descubra a Casa das Hortas através de provas,
+            visitas guiadas e momentos únicos no coração do Douro.
+    </p>
+
+    <div class="ch-actions">
+      <a href="/contactus" class="ch-btn">Reservar experiência</a>
+      <a href="#experiencias" class="ch-btn ch-btn-outline">Ver experiências</a>
+    </div>
+  </div>
+</section>
+
+<section class="ch-intro o_colored_level">
+  <div class="ch-container">
+    <div class="ch-intro-grid">
+      <div>
+        <div class="ch-kicker">O Douro vivido com tempo</div>
+        <h2 class="ch-title">Experiências desenhadas para sentir o Douro.</h2>
+        <div class="ch-line"/>
+        <p class="ch-text">Na Casa das Hortas acreditamos que o vinho deve ser descoberto sem pressa.
+                    Cada visita é um convite para conhecer as vinhas,
+                    a adega, a paisagem e as histórias que fazem parte da nossa família há gerações.</p>
+        <p class="ch-text">Mais do que provas de vinho,
+                    criamos momentos autênticos ligados à natureza,
+                    à gastronomia e à identidade do Douro Verde.</p>
+      </div>
+
+      <div class="ch-intro-img">
+        <img src="/web/image/1240-11d6a0f8/F65E2321-1276-46E9-92C0-7194A8BC6A25.jpeg" alt="" data-attachment-id="1235" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="918" data-original-id="1235" data-original-src="/web/image/1235-b5d48550/F65E2321-1276-46E9-92C0-7194A8BC6A25.jpeg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" srcset="/web/image/1242-7b41a322/F65E2321-1276-46E9-92C0-7194A8BC6A25.jpeg 750w, /web/image/1240-11d6a0f8/F65E2321-1276-46E9-92C0-7194A8BC6A25.jpeg 918w" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencias" class="o_colored_level">
+
+  <div class="ch-exp-row">
+    <div class="ch-exp-img">
+      <img src="/web/image/1241-cbb77ada/senhora.jpeg" alt="" data-attachment-id="1236" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="1024" data-original-id="1236" data-original-src="/web/image/1236-cbb77ada/senhora.jpeg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" srcset="/web/image/1243-96c24b49/senhora.jpeg 750w, /web/image/1241-cbb77ada/senhora.jpeg 1024w" loading="lazy"/>
+    </div>
+
+    <div class="ch-exp-copy">
+      <div class="ch-kicker">Visita &amp;amp; prova clássica</div>
+      <h2 class="ch-title">Prova Vinho Verde</h2>
+      <div class="ch-line"/>
+      <p class="ch-text">Uma introdução descontraída ao universo Casa das Hortas,
+                com prova comentada de vinhos e harmonização regional.</p>
+
+      <div class="ch-pills">
+        <span class="ch-pill">3 vinhos</span>
+        <span class="ch-pill">45 a 90 min</span>
+        <span class="ch-pill">Receção incluída</span>
+      </div>
+
+      <ul>
+        <li>Receção</li>
+        <li>Prova de 3 vinhos</li>
+        <li>Tábua Hortinha (mel e compotas regionais)</li>
+      </ul>
+
+      <div class="ch-duration">Duração: 45 a 90 min</div>
+      <br/><br/>
+      <a href="/contactus" class="ch-btn">Reservar</a>
+    </div>
+  </div>
+
+  <div class="ch-exp-row">
+    <div class="ch-exp-img">
+      <img src="/web/image/1245-d904e979/avesso%20.jpg" alt="" data-attachment-id="1238" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="1212" data-original-id="1238" data-original-src="/web/image/1238-f9292180/avesso%20.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" srcset="/web/image/1247-d0cc2145/avesso%20.jpg 750w, /web/image/1249-7f44fa14/avesso%20.jpg 900w, /web/image/1245-d904e979/avesso%20.jpg 1212w" loading="lazy"/>
+    </div>
+
+    <div class="ch-exp-copy dark">
+      <div class="ch-kicker">Experiência premium</div>
+      <h2 class="ch-title">Prova Vinho Verde Superior</h2>
+      <div class="ch-line"/>
+      <p class="ch-text">Uma experiência mais completa para descobrir vinhos selecionados da Casa das Hortas com harmonização regional.</p>
+
+      <div class="ch-pills">
+        <span class="ch-pill">4 vinhos</span>
+        <span class="ch-pill">45 a 90 min</span>
+        <span class="ch-pill">Tábua Hortas</span>
+      </div>
+
+      <ul>
+        <li>Receção</li>
+        <li>Prova de 4 vinhos</li>
+        <li>Tábua Hortas (queijos e enchidos regionais)</li>
+        <li>Possibilidade de Tábua Hortas Vegan mediante pedido</li>
+      </ul>
+
+      <div class="ch-duration">Duração: 45 a 90 min</div>
+      <br/><br/>
+      <a href="/contactus" class="ch-btn">Reservar</a>
+    </div>
+  </div>
+
+  <div class="ch-exp-row">
+    <div class="ch-exp-img">
+      <img src="/web/image/1244-a398b9ba/enoturismo.jpeg" alt="" data-attachment-id="1237" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="1212" data-original-id="1237" data-original-src="/web/image/1237-59d693cf/enoturismo.jpeg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" srcset="/web/image/1246-5542eca0/enoturismo.jpeg 750w, /web/image/1248-8a9e5201/enoturismo.jpeg 900w, /web/image/1244-a398b9ba/enoturismo.jpeg 1212w" loading="lazy"/>
+    </div>
+
+    <div class="ch-exp-copy">
+      <div class="ch-kicker">Reservas &amp;amp; grandes reservas</div>
+      <h2 class="ch-title">Prova Only The Best</h2>
+      <div class="ch-line"/>
+      <p class="ch-text">Uma prova exclusiva dedicada aos vinhos mais especiais da Casa das Hortas.</p>
+
+      <div class="ch-pills">
+        <span class="ch-pill">5 vinhos</span>
+        <span class="ch-pill">60 a 90 min</span>
+        <span class="ch-pill">Gourmet</span>
+      </div>
+
+      <ul>
+        <li>Receção</li>
+        <li>Prova de 5 vinhos, incluindo reservas e grandes reservas</li>
+        <li>Tábua Hortas Gourmet com queijos e enchidos regionais</li>
+        <li>Possibilidade de Tábua Hortas Vegan mediante pedido</li>
+      </ul>
+
+      <div class="ch-duration">Duração: 60 a 90 min</div>
+      <br/><br/>
+      <a href="/contactus" class="ch-btn">Reservar</a>
+    </div>
+  </div>
+
+</section>
+
+<section class="ch-packages o_colored_level">
+  <div class="ch-container">
+    <div class="ch-kicker">Todas as experiências</div>
+    <h2 class="ch-title">Há provar e provar,<br/>
+            há ir e voltar.</h2>
+    <div class="ch-line"/>
+
+    <div class="ch-package-grid">
+
+      <div class="ch-package">
+        <h3>Prova Gaio</h3>
+        <ul>
+          <li>Receção</li>
+          <li>Prova de 2 vinhos</li>
+          <li>Tábua Hortas (queijos e enchidos regionais)</li>
+        </ul>
+        <div class="ch-duration">Duração: 60 a 90 min</div>
+      </div>
+
+      <div class="ch-package">
+        <h3>Prova Gaio Superior</h3>
+        <ul>
+          <li>Receção</li>
+          <li>Prova de 4 vinhos</li>
+          <li>Tábua Hortas (queijos e enchidos regionais)</li>
+        </ul>
+        <div class="ch-duration">Duração: 60 a 90 min</div>
+      </div>
+
+      <div class="ch-package">
+        <h3>Prova 2 Regiões</h3>
+        <ul>
+          <li>Receção</li>
+          <li>Prova de 6 vinhos</li>
+          <li>Tábua Hortas (queijos e enchidos regionais)</li>
+        </ul>
+        <div class="ch-duration">Duração: 60 a 90 min</div>
+      </div>
+
+      <div class="ch-package">
+        <h3>Passeio Off Road &amp;amp; Prova de Vinhos</h3>
+        <ul>
+          <li>Passeio na serra com duração mínima de 60 min</li>
+          <li>Visita à adega</li>
+          <li>Prova de 3 vinhos</li>
+          <li>Tábua Hortas (queijos e enchidos regionais)</li>
+        </ul>
+        <div class="ch-duration">Duração: 90 a 120 min</div>
+      </div>
+
+      <div class="ch-package">
+        <h3>Picnic nas Hortas</h3>
+        <ul>
+          <li>Receção</li>
+          <li>1 garrafa de vinho HC ou Saiote</li>
+          <li>Cesta com produtos regionais</li>
+          <li>Queijo, enchidos, fruta da época e sobremesa</li>
+          <li>1 a 8 pessoas</li>
+        </ul>
+        <div class="ch-duration">Duração: 60 a 90 min</div>
+      </div>
+
+      <div class="ch-package">
+        <h3>Casa das Hortas à Mesa</h3>
+        <ul>
+          <li>Visita guiada às vinhas, beira-rio ou adega</li>
+          <li>Prova de 3 vinhos</li>
+          <li>Almoço em restaurante em Baião</li>
+          <li>Harmonização de vinhos elaborada mediante o menu</li>
+        </ul>
+        <div class="ch-duration">Duração: 4 horas</div>
+      </div>
+
+    </div>
+
+    <p class="ch-text" style="margin-top:3rem;font-size:1rem;">
+      As imagens são meramente ilustrativas. Os produtos regionais são sazonais. As visitas poderão sofrer alterações mediante as condições climatéricas.
+    </p>
+  </div>
+</section>
+
+<section class="ch-special o_colored_level">
+  <div class="ch-container">
+    <div class="ch-special-grid">
+      <div>
+        <h3>Paisagem única</h3>
+        <p class="ch-text">Vistas privilegiadas sobre o Douro e vinhas integradas na natureza.</p>
+      </div>
+
+      <div>
+        <h3>Produção familiar</h3>
+        <p class="ch-text">História, autenticidade e ligação ao território.</p>
+      </div>
+
+      <div>
+        <h3>Provas personalizadas</h3>
+        <p class="ch-text">Experiências adaptadas ao visitante e ao momento.</p>
+      </div>
+
+      <div>
+        <h3>Ambiente tranquilo</h3>
+        <p class="ch-text">Sem turismo massificado. Apenas vinho, silêncio e Douro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch-cinematic o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-image: url(&quot;/web/image/1239-cc1e1f34/quinta.webp&quot;);" data-attachment-id="1226" data-format-mimetype="image/webp" data-resize-width="960" data-original-id="1196" data-original-src="/web/image/1196-cc1e1f34/quinta.jpeg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp">
+  <div class="ch-cinematic-text">
+    <h2 class="ch-title">Cada garrafa começa aqui.</h2>
+  </div>
+</section>
+
+<section class="ch-gallery o_colored_level">
+  <div class="ch-container">
+    <div class="ch-kicker">Momentos Casa das Hortas</div>
+    <h2 class="ch-title">Uma galeria de experiências,<br/>
+            paisagens e vinho.</h2>
+
+    <div class="ch-gallery-grid">
+      <div class="ch-gallery-main">
+        <img src="/web/image/1261-e0d3e34d/3%20vinhos.jpg" alt="" data-attachment-id="1252" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="818" data-original-id="1252" data-original-src="/web/image/1252-2bbafd2a/3%20vinhos.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+      </div>
+
+      <div class="ch-gallery-col">
+        <div class="ch-gallery-small">
+          <img src="/web/image/1258-a7e35e65/alvarinho%20.jpg" alt="" data-attachment-id="1254" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="545" data-original-id="1254" data-original-src="/web/image/1254-b95bc6d7/alvarinho%20.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+        </div>
+        <div class="ch-gallery-small">
+          <img src="/web/image/1259-baf2a331/avesso%20.jpg" alt="" data-attachment-id="1256" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="545" data-original-id="1256" data-original-src="/web/image/1256-f9292180/avesso%20.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+        </div>
+      </div>
+
+      <div class="ch-gallery-col">
+        <div class="ch-gallery-small">
+          <img src="/web/image/1262-6050a831/arinto.jpg" alt="" data-attachment-id="1255" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="545" data-original-id="1255" data-original-src="/web/image/1255-7f4b222a/arinto.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+        </div>
+        <div class="ch-gallery-small">
+          <img src="/web/image/1260-f0b5aca8/encostas%20de%20baiao.jpg" alt="" data-attachment-id="1257" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-resize-width="545" data-original-id="1257" data-original-src="/web/image/1257-445858d5/encostas%20de%20baiao.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch-faq o_colored_level">
+  <div class="ch-container">
+    <h2 class="ch-title">Perguntas frequentes</h2>
+
+    <div class="ch-faq-list">
+      <div class="ch-faq-item">
+        <h3>É necessária reserva?</h3>
+        <p class="ch-text">Sim. Todas as experiências devem ser reservadas antecipadamente.</p>
+      </div>
+
+      <div class="ch-faq-item">
+        <h3>Quanto dura a visita?</h3>
+        <p class="ch-text">A duração depende da experiência, variando entre 45 minutos e 4 horas.</p>
+      </div>
+
+      <div class="ch-faq-item">
+        <h3>Existem opções vegan?</h3>
+        <p class="ch-text">Sim. Algumas tábuas podem ser adaptadas mediante pedido no momento da marcação.</p>
+      </div>
+
+      <div class="ch-faq-item">
+        <h3>As visitas podem sofrer alterações?</h3>
+        <p class="ch-text">Sim. As visitas poderão sofrer alterações mediante as condições climatéricas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch-final o_colored_level oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="background-color: rgba(18, 55, 45, 0); background-image: url(&quot;/web/image/1234-42ac55f6/hero.webp&quot;);" data-attachment-id="1233" data-format-mimetype="image/webp" data-scroll-background-ratio="0" data-resize-width="1920" data-original-id="1233" data-original-src="/web/image/1233-42ac55f6/hero.jpg" data-mimetype-before-conversion="image/jpeg" data-mimetype="image/webp">
+ 
+
+  <div class="ch-final-content">
+    <div class="ch-kicker">Casa das Hortas</div>
+    <h2 class="ch-title">Reserve a sua experiência no Douro.</h2>
+    <p style="font-size:1.25rem;line-height:1.8;color:#fff;">Descubra provas, paisagens e momentos pensados para serem vividos sem pressa.</p>
+
+    <div class="ch-actions">
+      <a href="/contactus" class="ch-btn">Reservar agora</a>
+      <a href="/contactus" class="ch-btn ch-btn-outline">Entrar em contacto</a>
+    </div>
+  </div>
+</section>
+
+  </div>
+</t>
